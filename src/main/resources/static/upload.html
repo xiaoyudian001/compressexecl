@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title></head>
+<body style="height: 100%;width: 100%;">
+<div style="height: 100%;text-align: center;margin-top: 288px;font-size: 24px;">
+    <h2>选择需要压缩的文件</h2>
+    <form th:action="@{/uploadFile}" method="POST" enctype="multipart/form-data">
+        <label>压缩比例 : </label><input type="text" name="radio" placeholder="请输入压缩比例（0-100）"/>
+        <br/><input style=" margin-top: 20px;margin-left: 49px;" type="file" name="file" value="请选择文件">
+        <br/><input style="margin-top: 10px;" type="submit" value="上传">
+    </form>
+</div>
+</body>
+</html>
