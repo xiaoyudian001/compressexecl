@@ -1,6 +1,7 @@
 package org.ofdrw.converter;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itextpdf.io.font.FontProgram;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.io.font.PdfEncodings;
@@ -136,8 +137,11 @@ public final class FontLoader {
      * */
     public void init() {
         addSystemFontMapping("方正小标宋简体", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\小标宋简.ttf");
-        addSystemFontMapping("方正书宋_GBK", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\方正书宋_GBK.TTF");
+//        addSystemFontMapping("方正书宋_GBK", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\方正书宋_GBK.TTF");
         addSystemFontMapping("仿宋_GB2312", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\仿宋_GB2312.ttf");
+        addSystemFontMapping("Times New Roman Bold", "C:\\Windows\\Fonts\\timesbd.ttf");
+        addSystemFontMapping("宋体", "C:\\Windows\\Fonts\\svgasys.fon");
+
         try (InputStream in = getClass().getResourceAsStream(DEFAULT_FONT_RESOURCE_PATH)) {
             byte[] buf = IOUtils.toByteArray(in);
             defaultFont = new TrueTypeFont().parse(buf);
@@ -156,9 +160,18 @@ public final class FontLoader {
         } else if (OSinfo.isLinux()) {
             scanFontDir(new File(DEFAULT_FONT_DIR_LINUX));
         }
-
+       log.error("本地字体缓存--fontNamePathMapping：{}",mapToJson(fontNamePathMapping));
     }
+    public  static String mapToJson(Map<String,String> map){
+        try{
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.writeValueAsString(map);
 
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }
+        return "";
+        }
     /**
      * 追加字体映射
      *
