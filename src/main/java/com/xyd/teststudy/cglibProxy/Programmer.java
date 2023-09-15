@@ -1,4 +1,4 @@
-package com.xyd.teststudy;
+package com.xyd.teststudy.cglibProxy;
 
 public class Programmer {
     public void code(){

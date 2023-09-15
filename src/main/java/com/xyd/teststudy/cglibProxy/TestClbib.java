@@ -1,5 +1,7 @@
-package com.xyd.teststudy;
+package com.xyd.teststudy.cglibProxy;
 
+import com.xyd.teststudy.cglibProxy.Hacker;
+import com.xyd.teststudy.cglibProxy.Programmer;
 import org.springframework.cglib.proxy.Enhancer;
 
 public class TestClbib {

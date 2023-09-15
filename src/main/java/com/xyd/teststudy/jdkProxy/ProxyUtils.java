@@ -1,5 +1,5 @@
 
-package com.xyd.teststudy;
+package com.xyd.teststudy.jdkProxy;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Proxy;

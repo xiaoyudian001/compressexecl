@@ -1,4 +1,4 @@
-package com.xyd.teststudy;
+package com.xyd.teststudy.jdkProxy;
 
 public class ElectricCar implements Rechargable, Vehicle {
 

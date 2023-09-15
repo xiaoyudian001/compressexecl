@@ -1,4 +1,4 @@
-package com.xyd.teststudy;
+package com.xyd.teststudy.jdkProxy;
 
 import java.lang.reflect.InvocationHandler;
 
@@ -16,9 +16,9 @@ public class TestProxyJdk {
         InvocationHandler invocationHandler = new InvocationHandlerImpl(electricCar);
         /**
          * 4.根据上面提供的信息，创建代理对象 在这个过程中，
-         *                          a.JDK会通过根据传入的参数信息动态地在内存中创建和.class 文件等同的字节码
-         * 		         b.然后根据相应的字节码转换成对应的class，
-         *                          c.然后调用newInstance()创建实例
+         *  a.JDK会通过根据传入的参数信息动态地在内存中创建和.class 文件等同的字节码
+         *  b.然后根据相应的字节码转换成对应的class，
+         *  c.然后调用newInstance()创建实例
          */
         Object o = Proxy.newProxyInstance(classLoader, interfaces, invocationHandler);
 //        Vehicle vehicle = (Vehicle) o;

@@ -1,5 +1,7 @@
-package com.xyd.teststudy;
+package com.xyd.teststudy.jdkProxy;
 
+
+import com.xyd.teststudy.jdkProxy.ElectricCar;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
