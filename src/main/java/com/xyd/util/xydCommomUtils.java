@@ -2,15 +2,21 @@ package com.xyd.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class xydCommomUtils {
-    private static  final String zhPattern = "[\\u4e00-\\u9fa5]";
+    private static final String zhPattern = "[\\u4e00-\\u9fa5]";
+    //100KB
+    byte[] a = new byte[1024 * 100];
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        ArrayList<xydCommomUtils> objects = new ArrayList<>();
+        while (true) {
+            objects.add(new xydCommomUtils());
+            Thread.sleep(3000);
+        }
 //        byte[] byteArray = "Hello, World!".getBytes();
 //
 //        for (byte b : byteArray) {
@@ -22,12 +28,13 @@ public class xydCommomUtils {
 //        // 或者将字节数组转换为十六进制字符串再打印
 //        String hexString = byteArrayToString(byteArray);
 //        System.out.println(hexString);
-        Map<String,Object> map=new ConcurrentHashMap<>();
-        System.out.println(map.get(null));
+
+
     }
 
     /**
      * 中文下载地址转码
+     *
      * @param str
      * @param charset
      * @return
@@ -44,13 +51,14 @@ public class xydCommomUtils {
         return b.toString();
     }
 
-        public static String bytesToHexString(byte[] bytes) {
-            StringBuilder stringBuilder = new StringBuilder();
-            for (byte b : bytes) {
-                stringBuilder.append(String.format("%02X ", b)); // 转换为十六进制
-            }
-            return stringBuilder.toString();
+    public static String bytesToHexString(byte[] bytes) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (byte b : bytes) {
+            stringBuilder.append(String.format("%02X ", b)); // 转换为十六进制
         }
+        return stringBuilder.toString();
+    }
+
     public static String byteArrayToString(byte[] byteArray) {
         StringBuilder sb = new StringBuilder();
         for (byte b : byteArray) {

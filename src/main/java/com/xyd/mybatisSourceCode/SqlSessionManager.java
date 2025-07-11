@@ -22,7 +22,7 @@ import java.util.Properties;
 public class SqlSessionManager implements SqlSessionFactory, SqlSession {
 
     //全局变量属性
-    //狗仔方法中传入的SqlSessionFactory对象
+    //构造方法中传入的SqlSessionFactory对象
     private final SqlSessionFactory sqlSessionFactory;
     //在构造方法中创建的SqlSession代理对象
     private final SqlSession sqlSessionProxy;

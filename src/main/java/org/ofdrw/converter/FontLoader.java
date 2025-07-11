@@ -139,8 +139,8 @@ public final class FontLoader {
         addSystemFontMapping("方正小标宋简体", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\小标宋简.ttf");
 //        addSystemFontMapping("方正书宋_GBK", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\方正书宋_GBK.TTF");
         addSystemFontMapping("仿宋_GB2312", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\仿宋_GB2312.ttf");
-        addSystemFontMapping("Times New Roman Bold", "C:\\Windows\\Fonts\\timesbd.ttf");
-        addSystemFontMapping("宋体", "C:\\Windows\\Fonts\\svgasys.fon");
+        addSystemFontMapping("Times New Roman Bold", "C:\\Users\\78052\\AppData\\Local\\Microsoft\\Windows\\Fonts\\小标宋简.ttf");
+//      addSystemFontMapping("宋体", "C:\\Windows\\Fonts\\YuGothB.ttc");
 
         try (InputStream in = getClass().getResourceAsStream(DEFAULT_FONT_RESOURCE_PATH)) {
             byte[] buf = IOUtils.toByteArray(in);
